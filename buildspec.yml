@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Installing NPM dependencies...
+      - npm install
+  pre_build:
+    commands:
+      - echo Logging in to Docker Hub...
+      - echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+  build:
+    commands:
+      - echo Building the Docker image...
+      - docker build -t my-docker-project .
+      - docker tag my-docker-project:latest $DOCKERHUB_USERNAME/my-docker-project:latest
+  post_build:
+    commands:
+      - echo Pushing the Docker image to Docker Hub...
+      - docker push $DOCKERHUB_USERNAME/my-docker-project:latest
+artifacts:
+  files:
+    - '**/*'
