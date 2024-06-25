@@ -1,0 +1,9 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/my-node-app
+hooks:
+  AfterInstall:
+    - location: deploy.sh
+      runas: ubuntu
