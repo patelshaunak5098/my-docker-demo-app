@@ -14,12 +14,12 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t my-docker-project .
-      - docker tag my-docker-project:latest $DOCKERHUB_USERNAME/my-docker-project:latest
+      - docker build -t my-docker-project2 .
+      - docker tag my-docker-project2:latest $DOCKERHUB_USERNAME/my-docker-project2:latest
   post_build:
     commands:
       - echo Pushing the Docker image to Docker Hub...
-      - docker push $DOCKERHUB_USERNAME/my-docker-project:latest
+      - docker push $DOCKERHUB_USERNAME/my-docker-project2:latest
 artifacts:
   files:
     - '**/*'

@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/my-docker-project
+    destination: /home/ubuntu/my-docker-project2
 hooks:
   AfterInstall:
     - location: deploy.sh
