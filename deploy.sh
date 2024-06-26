@@ -6,7 +6,7 @@ docker login -u patelshaunak5098 -p Shaunak@5098
 # Pull the latest image from Docker Hub
 docker pull patelshaunak5098/my-docker-project2:latest
 
-CONTAINER_ID=$(docker ps -q --filter ancestor=patelshaunak5098/my-docker-project2)
+CONTAINER_ID=$(docker ps -q --filter "name=my-docker-project")
 
 echo "container ID ====== $CONTAINER_ID"
 # Stop and remove the old container if it exists
