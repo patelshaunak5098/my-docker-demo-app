@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /home/ubuntu/app
 # Log in to Docker Hub
-docker login -u patelshaunak5098 -p Shaunak@5098
+echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
 
 # Pull the latest image from Docker Hub
 docker pull patelshaunak5098/my-docker-project2:latest
